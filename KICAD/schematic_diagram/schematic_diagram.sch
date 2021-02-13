@@ -1,0 +1,399 @@
+EESchema Schematic File Version 4
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Замена микросхемы HC8T1212 (MCU с сенсорными входами)"
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Microchip_ATtiny:ATtiny24A-SSU U1
+U 1 1 60281C82
+P 4350 3300
+F 0 "U1" H 4100 4150 50  0000 R CNN
+F 1 "ATtiny24A-SSU" H 4450 3250 50  0000 R CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 4350 3300 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/doc8183.pdf" H 4350 3300 50  0001 C CNN
+	1    4350 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J5
+U 1 1 60281E90
+P 6900 3800
+F 0 "J5" H 6980 3842 50  0001 L CNN
+F 1 "LEDW (white)" H 6979 3796 50  0000 L CNN
+F 2 "" H 6900 3800 50  0001 C CNN
+F 3 "~" H 6900 3800 50  0001 C CNN
+	1    6900 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J4
+U 1 1 60281F46
+P 6900 3400
+F 0 "J4" H 6980 3442 50  0001 L CNN
+F 1 "LEDY (yellow)" H 6979 3396 50  0000 L CNN
+F 2 "" H 6900 3400 50  0001 C CNN
+F 3 "~" H 6900 3400 50  0001 C CNN
+	1    6900 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J1
+U 1 1 60281F66
+P 6900 2700
+F 0 "J1" H 6980 2742 50  0001 L CNN
+F 1 "ENC-A (encoder A)" H 6980 2696 50  0000 L CNN
+F 2 "" H 6900 2700 50  0001 C CNN
+F 3 "~" H 6900 2700 50  0001 C CNN
+	1    6900 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J2
+U 1 1 60281F86
+P 6900 2800
+F 0 "J2" H 6980 2842 50  0001 L CNN
+F 1 "ENC-B (encoder B)" H 6979 2796 50  0000 L CNN
+F 2 "" H 6900 2800 50  0001 C CNN
+F 3 "~" H 6900 2800 50  0001 C CNN
+	1    6900 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J3
+U 1 1 60281FA6
+P 6900 2900
+F 0 "J3" H 6980 2942 50  0001 L CNN
+F 1 "ON/OFF KEY" H 6980 2896 50  0000 L CNN
+F 2 "" H 6900 2900 50  0001 C CNN
+F 3 "~" H 6900 2900 50  0001 C CNN
+	1    6900 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 60282080
+P 5200 2450
+F 0 "C2" H 5315 2496 50  0000 L CNN
+F 1 "0.22uF" H 5315 2405 50  0000 L CNN
+F 2 "" H 5238 2300 50  0001 C CNN
+F 3 "~" H 5200 2450 50  0001 C CNN
+	1    5200 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 60282143
+P 5700 2450
+F 0 "C3" H 5815 2496 50  0000 L CNN
+F 1 "0.22uF" H 5815 2405 50  0000 L CNN
+F 2 "" H 5738 2300 50  0001 C CNN
+F 3 "~" H 5700 2450 50  0001 C CNN
+	1    5700 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C4
+U 1 1 6028216D
+P 6200 2450
+F 0 "C4" H 6315 2496 50  0000 L CNN
+F 1 "0.22uF" H 6315 2405 50  0000 L CNN
+F 2 "" H 6238 2300 50  0001 C CNN
+F 3 "~" H 6200 2450 50  0001 C CNN
+	1    6200 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 2700 5200 2700
+Wire Wire Line
+	4950 2800 5700 2800
+Wire Wire Line
+	4950 2900 6200 2900
+Wire Wire Line
+	5200 2600 5200 2700
+Connection ~ 5200 2700
+Wire Wire Line
+	5200 2700 6700 2700
+Wire Wire Line
+	5700 2600 5700 2800
+Connection ~ 5700 2800
+Wire Wire Line
+	5700 2800 6700 2800
+Wire Wire Line
+	6200 2600 6200 2900
+Connection ~ 6200 2900
+Wire Wire Line
+	6200 2900 6700 2900
+Wire Wire Line
+	4950 3400 6700 3400
+Wire Wire Line
+	4950 3800 6700 3800
+$Comp
+L Sensor_Touch:AT42QT1010-TSHR U2
+U 1 1 602823AD
+P 5650 4650
+F 0 "U2" H 5800 5050 50  0000 C CNN
+F 1 "AT42QT1010-TSHR" H 6100 4950 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6" H 5700 4400 50  0001 L CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-9541-AT42-QTouch-BSW-AT42QT1010_Datasheet.pdf" H 5920 5200 50  0001 C CNN
+	1    5650 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C5
+U 1 1 6028240A
+P 6350 4750
+F 0 "C5" V 6500 4750 50  0000 C CNN
+F 1 "10n" V 6600 4750 50  0000 C CNN
+F 2 "" H 6388 4600 50  0001 C CNN
+F 3 "~" H 6350 4750 50  0001 C CNN
+	1    6350 4750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6050 4750 6200 4750
+Wire Wire Line
+	6500 4750 6600 4750
+Wire Wire Line
+	6600 4750 6600 4550
+Wire Wire Line
+	6600 4550 6050 4550
+$Comp
+L Connector_Generic:Conn_01x01 J6
+U 1 1 6028279A
+P 6900 4550
+F 0 "J6" H 6980 4592 50  0001 L CNN
+F 1 "SENSOR KEY" H 6980 4546 50  0000 L CNN
+F 2 "" H 6900 4550 50  0001 C CNN
+F 3 "~" H 6900 4550 50  0001 C CNN
+	1    6900 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6600 4550 6700 4550
+Connection ~ 6600 4550
+Wire Wire Line
+	5250 4550 5150 4550
+Wire Wire Line
+	5150 4550 5150 5050
+Wire Wire Line
+	5150 5050 5650 5050
+Wire Wire Line
+	5650 5050 5650 4950
+$Comp
+L power:GND #PWR03
+U 1 1 60282D4F
+P 5650 5150
+F 0 "#PWR03" H 5650 4900 50  0001 C CNN
+F 1 "GND" H 5655 4977 50  0000 C CNN
+F 2 "" H 5650 5150 50  0001 C CNN
+F 3 "" H 5650 5150 50  0001 C CNN
+	1    5650 5150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 5050 5650 5150
+Connection ~ 5650 5050
+Wire Wire Line
+	5250 4750 5050 4750
+Wire Wire Line
+	5050 4750 5050 3600
+Wire Wire Line
+	5050 3600 4950 3600
+Wire Wire Line
+	5150 5050 4350 5050
+Wire Wire Line
+	4350 5050 4350 4200
+Connection ~ 5150 5050
+Wire Wire Line
+	5650 4350 5650 4200
+Wire Wire Line
+	4350 2400 4350 2300
+$Comp
+L power:GND #PWR04
+U 1 1 60283F82
+P 6800 2300
+F 0 "#PWR04" H 6800 2050 50  0001 C CNN
+F 1 "GND" V 6805 2172 50  0000 R CNN
+F 2 "" H 6800 2300 50  0001 C CNN
+F 3 "" H 6800 2300 50  0001 C CNN
+	1    6800 2300
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5200 2300 5700 2300
+Connection ~ 5700 2300
+Wire Wire Line
+	5700 2300 6200 2300
+Connection ~ 6200 2300
+Wire Wire Line
+	6200 2300 6800 2300
+$Comp
+L Device:C C1
+U 1 1 60284380
+P 4750 2300
+F 0 "C1" V 4500 2300 50  0000 C CNN
+F 1 "1uF" V 4600 2300 50  0000 C CNN
+F 2 "" H 4788 2150 50  0001 C CNN
+F 3 "~" H 4750 2300 50  0001 C CNN
+	1    4750 2300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4900 2300 5200 2300
+Connection ~ 5200 2300
+Wire Wire Line
+	4600 2300 4350 2300
+$Comp
+L Device:Rotary_Encoder_Switch SW1
+U 1 1 602856A2
+P 8750 2800
+F 0 "SW1" H 8750 3167 50  0000 C CNN
+F 1 "Rotary_Encoder_Switch" H 8750 3076 50  0000 C CNN
+F 2 "" H 8600 2960 50  0001 C CNN
+F 3 "~" H 8750 3060 50  0001 C CNN
+	1    8750 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR05
+U 1 1 60285710
+P 9200 3200
+F 0 "#PWR05" H 9200 2950 50  0001 C CNN
+F 1 "GND" H 9205 3027 50  0000 C CNN
+F 2 "" H 9200 3200 50  0001 C CNN
+F 3 "" H 9200 3200 50  0001 C CNN
+	1    9200 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9200 3100 9200 2900
+Wire Wire Line
+	9200 2900 9050 2900
+Wire Wire Line
+	9200 3100 9200 3200
+Connection ~ 9200 3100
+Wire Wire Line
+	8450 2800 8250 2800
+Wire Wire Line
+	8250 2800 8250 3100
+Wire Wire Line
+	8250 3100 9200 3100
+$Comp
+L Connector:Conn_01x01_Male J7
+U 1 1 60287265
+P 7750 2700
+F 0 "J7" H 7856 2878 50  0001 C CNN
+F 1 "Conn_01x01_Male" H 7856 2787 50  0001 C CNN
+F 2 "" H 7750 2700 50  0001 C CNN
+F 3 "~" H 7750 2700 50  0001 C CNN
+	1    7750 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Male J8
+U 1 1 60287A71
+P 7750 2800
+F 0 "J8" H 7856 2978 50  0001 C CNN
+F 1 "Conn_01x01_Male" H 7856 2887 50  0001 C CNN
+F 2 "" H 7750 2800 50  0001 C CNN
+F 3 "~" H 7750 2800 50  0001 C CNN
+	1    7750 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Male J9
+U 1 1 60287A8C
+P 7750 2900
+F 0 "J9" H 7856 3078 50  0001 C CNN
+F 1 "Conn_01x01_Male" H 7856 2987 50  0001 C CNN
+F 2 "" H 7750 2900 50  0001 C CNN
+F 3 "~" H 7750 2900 50  0001 C CNN
+	1    7750 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7950 2700 8450 2700
+Wire Wire Line
+	7950 2800 8150 2800
+Wire Wire Line
+	8150 2800 8150 2900
+Wire Wire Line
+	8150 2900 8450 2900
+Wire Wire Line
+	7950 2900 8050 2900
+Wire Wire Line
+	8050 2900 8050 2250
+Wire Wire Line
+	8050 2250 9200 2250
+Wire Wire Line
+	9200 2250 9200 2700
+Wire Wire Line
+	9200 2700 9050 2700
+$Comp
+L Device:R R1
+U 1 1 602897F9
+P 8350 4550
+F 0 "R1" V 8143 4550 50  0000 C CNN
+F 1 "20k" V 8234 4550 50  0000 C CNN
+F 2 "" V 8280 4550 50  0001 C CNN
+F 3 "~" H 8350 4550 50  0001 C CNN
+	1    8350 4550
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Male J10
+U 1 1 60289903
+P 7750 4550
+F 0 "J10" H 7856 4728 50  0001 C CNN
+F 1 "Conn_01x01_Male" H 7856 4637 50  0001 C CNN
+F 2 "" H 7750 4550 50  0001 C CNN
+F 3 "~" H 7750 4550 50  0001 C CNN
+	1    7750 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7950 4550 8200 4550
+Wire Notes Line style solid rgb(132, 0, 0)
+	8500 4400 8850 4400
+Wire Notes Line style solid rgb(132, 0, 0)
+	8850 4400 8850 4700
+Wire Notes Line style solid rgb(132, 0, 0)
+	8850 4700 8500 4700
+Wire Notes Line style solid rgb(132, 0, 0)
+	8500 4700 8500 4400
+$Comp
+L power:+5V #PWR01
+U 1 1 6028C7E5
+P 4350 2150
+F 0 "#PWR01" H 4350 2000 50  0001 C CNN
+F 1 "+5V" H 4365 2323 50  0000 C CNN
+F 2 "" H 4350 2150 50  0001 C CNN
+F 3 "" H 4350 2150 50  0001 C CNN
+	1    4350 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4350 2150 4350 2300
+Connection ~ 4350 2300
+$Comp
+L power:+5V #PWR02
+U 1 1 6028D57F
+P 5650 4200
+F 0 "#PWR02" H 5650 4050 50  0001 C CNN
+F 1 "+5V" H 5665 4373 50  0000 C CNN
+F 2 "" H 5650 4200 50  0001 C CNN
+F 3 "" H 5650 4200 50  0001 C CNN
+	1    5650 4200
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

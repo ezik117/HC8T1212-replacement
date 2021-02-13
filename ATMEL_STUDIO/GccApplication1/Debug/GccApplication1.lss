@@ -1,0 +1,660 @@
+
+GccApplication1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000036c  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000002  00800060  0000036c  00000400  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000008  00800062  00800062  00000402  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000402  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000434  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000030  00000000  00000000  00000470  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   0000068c  00000000  00000000  000004a0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000004d4  00000000  00000000  00000b2c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   0000044f  00000000  00000000  00001000  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000080  00000000  00000000  00001450  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000035c  00000000  00000000  000014d0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    0000026e  00000000  00000000  0000182c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000020  00000000  00000000  00001a9a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	5a c0       	rjmp	.+180    	; 0xb6 <__ctors_end>
+   2:	72 c0       	rjmp	.+228    	; 0xe8 <__bad_interrupt>
+   4:	9c c0       	rjmp	.+312    	; 0x13e <__vector_2>
+   6:	63 c1       	rjmp	.+710    	; 0x2ce <__vector_3>
+   8:	6f c0       	rjmp	.+222    	; 0xe8 <__bad_interrupt>
+   a:	6e c0       	rjmp	.+220    	; 0xe8 <__bad_interrupt>
+   c:	6d c0       	rjmp	.+218    	; 0xe8 <__bad_interrupt>
+   e:	6c c0       	rjmp	.+216    	; 0xe8 <__bad_interrupt>
+  10:	6b c0       	rjmp	.+214    	; 0xe8 <__bad_interrupt>
+  12:	6a c0       	rjmp	.+212    	; 0xe8 <__bad_interrupt>
+  14:	69 c0       	rjmp	.+210    	; 0xe8 <__bad_interrupt>
+  16:	68 c0       	rjmp	.+208    	; 0xe8 <__bad_interrupt>
+  18:	67 c0       	rjmp	.+206    	; 0xe8 <__bad_interrupt>
+  1a:	66 c0       	rjmp	.+204    	; 0xe8 <__bad_interrupt>
+  1c:	65 c0       	rjmp	.+202    	; 0xe8 <__bad_interrupt>
+  1e:	64 c0       	rjmp	.+200    	; 0xe8 <__bad_interrupt>
+  20:	63 c0       	rjmp	.+198    	; 0xe8 <__bad_interrupt>
+
+00000022 <__trampolines_end>:
+  22:	00 01       	movw	r0, r0
+  24:	02 03       	mulsu	r16, r18
+  26:	04 05       	cpc	r16, r4
+  28:	06 07       	cpc	r16, r22
+  2a:	08 09       	sbc	r16, r8
+  2c:	0a 0b       	sbc	r16, r26
+  2e:	0c 0d       	add	r16, r12
+  30:	0e 0f       	add	r16, r30
+  32:	10 11       	cpse	r17, r0
+  34:	12 13       	cpse	r17, r18
+  36:	14 15       	cp	r17, r4
+  38:	16 17       	cp	r17, r22
+  3a:	18 19       	sub	r17, r8
+  3c:	1a 1b       	sub	r17, r26
+  3e:	1c 1d       	adc	r17, r12
+  40:	1f 20       	and	r1, r15
+  42:	21 23       	and	r18, r17
+  44:	24 26       	eor	r2, r20
+  46:	27 29       	or	r18, r7
+  48:	2b 2c       	mov	r2, r11
+  4a:	2e 30       	cpi	r18, 0x0E	; 14
+  4c:	32 34       	cpi	r19, 0x42	; 66
+  4e:	36 38       	cpi	r19, 0x86	; 134
+  50:	3a 3c       	cpi	r19, 0xCA	; 202
+  52:	3e 40       	sbci	r19, 0x0E	; 14
+  54:	43 45       	sbci	r20, 0x53	; 83
+  56:	47 4a       	sbci	r20, 0xA7	; 167
+  58:	4c 4f       	sbci	r20, 0xFC	; 252
+  5a:	51 54       	subi	r21, 0x41	; 65
+  5c:	57 59       	subi	r21, 0x97	; 151
+  5e:	5c 5f       	subi	r21, 0xFC	; 252
+  60:	62 64       	ori	r22, 0x42	; 66
+  62:	67 6a       	ori	r22, 0xA7	; 167
+  64:	6d 70       	andi	r22, 0x0D	; 13
+  66:	73 76       	andi	r23, 0x63	; 99
+  68:	79 7c       	andi	r23, 0xC9	; 201
+  6a:	7f 82       	std	Y+7, r7	; 0x07
+  6c:	85 88       	ldd	r8, Z+21	; 0x15
+  6e:	8b 8e       	std	Y+27, r8	; 0x1b
+  70:	91 94       	neg	r9
+  72:	97 9a       	sbi	0x12, 7	; 18
+  74:	9c 9f       	mul	r25, r28
+  76:	a2 a5       	ldd	r26, Z+42	; 0x2a
+  78:	a7 aa       	std	Z+55, r10	; 0x37
+  7a:	ad af       	std	Y+61, r26	; 0x3d
+  7c:	b2 b4       	in	r11, 0x22	; 34
+  7e:	b7 b9       	out	0x07, r27	; 7
+  80:	bb be       	out	0x3b, r11	; 59
+  82:	c0 c2       	rjmp	.+1408   	; 0x604 <__LOCK_REGION_LENGTH__+0x204>
+  84:	c4 c6       	rjmp	.+3464   	; 0xe0e <__LOCK_REGION_LENGTH__+0xa0e>
+  86:	c8 ca       	rjmp	.-2672   	; 0xfffff618 <__eeprom_end+0xff7ef618>
+  88:	cc ce       	rjmp	.-616    	; 0xfffffe22 <__eeprom_end+0xff7efe22>
+  8a:	d0 d2       	rcall	.+1440   	; 0x62c <__LOCK_REGION_LENGTH__+0x22c>
+  8c:	d3 d5       	rcall	.+2982   	; 0xc34 <__LOCK_REGION_LENGTH__+0x834>
+  8e:	d7 d8       	rcall	.-3666   	; 0xfffff23e <__eeprom_end+0xff7ef23e>
+  90:	da db       	rcall	.-2124   	; 0xfffff846 <__eeprom_end+0xff7ef846>
+  92:	dd de       	rcall	.-582    	; 0xfffffe4e <__eeprom_end+0xff7efe4e>
+  94:	df e1       	ldi	r29, 0x1F	; 31
+  96:	e2 e3       	ldi	r30, 0x32	; 50
+  98:	e4 e5       	ldi	r30, 0x54	; 84
+  9a:	e6 e7       	ldi	r30, 0x76	; 118
+  9c:	e8 e9       	ldi	r30, 0x98	; 152
+  9e:	ea eb       	ldi	r30, 0xBA	; 186
+  a0:	ec ed       	ldi	r30, 0xDC	; 220
+  a2:	ee ef       	ldi	r30, 0xFE	; 254
+  a4:	f0 f1       	brcs	.+124    	; 0x122 <main+0x38>
+  a6:	f1 f2       	breq	.-68     	; 0x64 <__SREG__+0x25>
+  a8:	f3 f4       	brvc	.+60     	; 0xe6 <__stack+0x7>
+  aa:	f5 f6       	brhc	.-68     	; 0x68 <__SREG__+0x29>
+  ac:	f7 f8       	bld	r15, 7
+  ae:	f9 fa       	.word	0xfaf9	; ????
+  b0:	fb fc       	.word	0xfcfb	; ????
+  b2:	fd fe       	.word	0xfefd	; ????
+  b4:	ff 00       	.word	0x00ff	; ????
+
+000000b6 <__ctors_end>:
+  b6:	11 24       	eor	r1, r1
+  b8:	1f be       	out	0x3f, r1	; 63
+  ba:	cf ed       	ldi	r28, 0xDF	; 223
+  bc:	cd bf       	out	0x3d, r28	; 61
+
+000000be <__do_copy_data>:
+  be:	10 e0       	ldi	r17, 0x00	; 0
+  c0:	a0 e6       	ldi	r26, 0x60	; 96
+  c2:	b0 e0       	ldi	r27, 0x00	; 0
+  c4:	ec e6       	ldi	r30, 0x6C	; 108
+  c6:	f3 e0       	ldi	r31, 0x03	; 3
+  c8:	02 c0       	rjmp	.+4      	; 0xce <__do_copy_data+0x10>
+  ca:	05 90       	lpm	r0, Z+
+  cc:	0d 92       	st	X+, r0
+  ce:	a2 36       	cpi	r26, 0x62	; 98
+  d0:	b1 07       	cpc	r27, r17
+  d2:	d9 f7       	brne	.-10     	; 0xca <__do_copy_data+0xc>
+
+000000d4 <__do_clear_bss>:
+  d4:	20 e0       	ldi	r18, 0x00	; 0
+  d6:	a2 e6       	ldi	r26, 0x62	; 98
+  d8:	b0 e0       	ldi	r27, 0x00	; 0
+  da:	01 c0       	rjmp	.+2      	; 0xde <.do_clear_bss_start>
+
+000000dc <.do_clear_bss_loop>:
+  dc:	1d 92       	st	X+, r1
+
+000000de <.do_clear_bss_start>:
+  de:	aa 36       	cpi	r26, 0x6A	; 106
+  e0:	b2 07       	cpc	r27, r18
+  e2:	e1 f7       	brne	.-8      	; 0xdc <.do_clear_bss_loop>
+  e4:	02 d0       	rcall	.+4      	; 0xea <main>
+  e6:	40 c1       	rjmp	.+640    	; 0x368 <_exit>
+
+000000e8 <__bad_interrupt>:
+  e8:	8b cf       	rjmp	.-234    	; 0x0 <__vectors>
+
+000000ea <main>:
+PA2 - [in] - PCINT2    включение/выключение
+*/
+
+int main(void)
+{
+	sei();
+  ea:	78 94       	sei
+	/*строки закомментированы т.к. по умолчанию все пины это входы*/
+	//CLEAR_BIT(DDRA, DD0); // PB3 - вход энкодера А
+	//CLEAR_BIT(DDRA, DD1); // PB4 - вход энкодера B
+	//CLEAR_BIT(DDRA, DD2); // PB4 - вход кнопки выключения
+	
+	SET_BIT(PORTA, DD0); // pull-up входа энкодера А
+  ec:	d8 9a       	sbi	0x1b, 0	; 27
+	SET_BIT(PORTA, DD1); // pull-up входа энкодера B
+  ee:	d9 9a       	sbi	0x1b, 1	; 27
+	SET_BIT(PORTA, DD2); // pull-up кнопки выключения
+  f0:	da 9a       	sbi	0x1b, 2	; 27
+	//SET_BIT(DDRB, DD2); // PWM управление белыми LED
+	//SET_BIT(DDRA, DD7); // PWM управление желтыми LED
+	
+	
+	// прерывания
+	SET_BIT(PCMSK0, PCINT0); // включить прерывания от порта PA0 (канал А энкодера)
+  f2:	90 9a       	sbi	0x12, 0	; 18
+	SET_BIT(PCMSK0, PCINT1); // включить прерывания от порта PA1 (канал B энкодера)
+  f4:	91 9a       	sbi	0x12, 1	; 18
+	SET_BIT(PCMSK0, PCINT2); // включить прерывания от порта PA2 (кнопка включения/выключения)
+  f6:	92 9a       	sbi	0x12, 2	; 18
+	SET_BIT(PCMSK1, PCINT8); // включить прерывания от порта PB0 (сенсорная кнопка смены гаммы)
+  f8:	80 b5       	in	r24, 0x20	; 32
+  fa:	81 60       	ori	r24, 0x01	; 1
+  fc:	80 bd       	out	0x20, r24	; 32
+	SET_BIT(GIMSK, PCIE0); // включить прерывания GPIO 0..7
+  fe:	8b b7       	in	r24, 0x3b	; 59
+ 100:	80 61       	ori	r24, 0x10	; 16
+ 102:	8b bf       	out	0x3b, r24	; 59
+	SET_BIT(GIMSK, PCIE1); // включить прерывания GPIO 8..11
+ 104:	8b b7       	in	r24, 0x3b	; 59
+ 106:	80 62       	ori	r24, 0x20	; 32
+ 108:	8b bf       	out	0x3b, r24	; 59
+	
+	brightness = max; // на включении яркость 50%
+ 10a:	82 e9       	ldi	r24, 0x92	; 146
+ 10c:	90 e0       	ldi	r25, 0x00	; 0
+ 10e:	90 93 69 00 	sts	0x0069, r25	; 0x800069 <brightness+0x1>
+ 112:	80 93 68 00 	sts	0x0068, r24	; 0x800068 <brightness>
+	OCR0A = OCR0B = pgm_read_word_near(br + brightness);
+ 116:	e4 eb       	ldi	r30, 0xB4	; 180
+ 118:	f0 e0       	ldi	r31, 0x00	; 0
+ 11a:	85 91       	lpm	r24, Z+
+ 11c:	94 91       	lpm	r25, Z
+ 11e:	8c bf       	out	0x3c, r24	; 60
+ 120:	86 bf       	out	0x36, r24	; 54
+	DeviceIsON = FALSE; // лампа выключена
+ 122:	10 92 67 00 	sts	0x0067, r1	; 0x800067 <DeviceIsON>
+	LEDW = LEDY = TRUE; // режим все светодиоды (белые и желтые) включены
+ 126:	81 e0       	ldi	r24, 0x01	; 1
+ 128:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <LEDY>
+ 12c:	80 93 66 00 	sts	0x0066, r24	; 0x800066 <LEDW>
+	mode = 0;
+ 130:	10 92 65 00 	sts	0x0065, r1	; 0x800065 <mode>
+
+	TCCR0A = (1<<COM0A1 | 0<<COM0A0) |       // FastPWM, set OC0A on TOP, clear on Compare Match
+ 134:	83 ea       	ldi	r24, 0xA3	; 163
+ 136:	80 bf       	out	0x30, r24	; 48
+			 (1<<COM0B1 | 0<<COM0B0) |       // FastPWM, set OC0B on TOP, clear on Compare Match
+			 (1<<WGM01 | 1<<WGM00);          // Mode: FastPWM
+	TCCR0B = (0<<FOC0A | 0<<FOC0B) |         // Force Output Compare disabled
+ 138:	82 e0       	ldi	r24, 0x02	; 2
+ 13a:	83 bf       	out	0x33, r24	; 51
+ 13c:	ff cf       	rjmp	.-2      	; 0x13c <main+0x52>
+
+0000013e <__vector_2>:
+}
+
+
+// прерывания с линий PCINT0..7
+ISR (PCINT0_vect)
+{
+ 13e:	1f 92       	push	r1
+ 140:	0f 92       	push	r0
+ 142:	0f b6       	in	r0, 0x3f	; 63
+ 144:	0f 92       	push	r0
+ 146:	11 24       	eor	r1, r1
+ 148:	2f 93       	push	r18
+ 14a:	3f 93       	push	r19
+ 14c:	8f 93       	push	r24
+ 14e:	9f 93       	push	r25
+ 150:	ef 93       	push	r30
+ 152:	ff 93       	push	r31
+	uint8_t R = PINA;
+ 154:	89 b3       	in	r24, 0x19	; 25
+	S=0; L=1 => L=0 //изменилось: S xor L = 1
+	S=0; L=0 => L=0 //не изменилось: S xor L = 0
+	S=1; L=0 => L=1 //изменилось: S xor L = 1
+	S=1; L=1 => L=1 //не изменилось: S xor L = 0
+	*/
+	uint8_t BtnState = R & P2;
+ 156:	28 2f       	mov	r18, r24
+ 158:	24 70       	andi	r18, 0x04	; 4
+	if ((BtnState ^ KEY_ONOFF_lastState) == P2)
+ 15a:	90 91 60 00 	lds	r25, 0x0060	; 0x800060 <KEY_ONOFF_lastState>
+ 15e:	92 27       	eor	r25, r18
+ 160:	94 30       	cpi	r25, 0x04	; 4
+ 162:	c1 f4       	brne	.+48     	; 0x194 <__vector_2+0x56>
+	{
+		// состояние изменилось на противоположное
+		if (BtnState == P2) // кнопка отжата
+ 164:	24 30       	cpi	r18, 0x04	; 4
+ 166:	a1 f4       	brne	.+40     	; 0x190 <__vector_2+0x52>
+		{
+			DeviceIsON ^= 1;
+ 168:	30 91 67 00 	lds	r19, 0x0067	; 0x800067 <DeviceIsON>
+ 16c:	91 e0       	ldi	r25, 0x01	; 1
+ 16e:	93 27       	eor	r25, r19
+ 170:	90 93 67 00 	sts	0x0067, r25	; 0x800067 <DeviceIsON>
+			
+			if (DeviceIsON)
+ 174:	99 23       	and	r25, r25
+ 176:	51 f0       	breq	.+20     	; 0x18c <__vector_2+0x4e>
+			{
+				// включить
+				if (LEDW) SET_BIT(DDRB, DD2);
+ 178:	90 91 66 00 	lds	r25, 0x0066	; 0x800066 <LEDW>
+ 17c:	91 11       	cpse	r25, r1
+ 17e:	ba 9a       	sbi	0x17, 2	; 23
+				if (LEDY) SET_BIT(DDRA, DD7);
+ 180:	90 91 64 00 	lds	r25, 0x0064	; 0x800064 <LEDY>
+ 184:	99 23       	and	r25, r25
+ 186:	21 f0       	breq	.+8      	; 0x190 <__vector_2+0x52>
+ 188:	d7 9a       	sbi	0x1a, 7	; 26
+ 18a:	02 c0       	rjmp	.+4      	; 0x190 <__vector_2+0x52>
+			}
+			else
+			{
+				// выключить
+				CLEAR_BIT(DDRB, DD2);
+ 18c:	ba 98       	cbi	0x17, 2	; 23
+				CLEAR_BIT(DDRA, DD7);
+ 18e:	d7 98       	cbi	0x1a, 7	; 26
+			}			
+		}
+		
+		KEY_ONOFF_lastState = BtnState;
+ 190:	20 93 60 00 	sts	0x0060, r18	; 0x800060 <KEY_ONOFF_lastState>
+	}
+	
+	// --- проверим не выключено ли устройство --------------------------------
+	if (!DeviceIsON) return; // устройство выключено
+ 194:	90 91 67 00 	lds	r25, 0x0067	; 0x800067 <DeviceIsON>
+ 198:	99 23       	and	r25, r25
+ 19a:	09 f4       	brne	.+2      	; 0x19e <__vector_2+0x60>
+ 19c:	8d c0       	rjmp	.+282    	; 0x2b8 <__vector_2+0x17a>
+	
+	// --- декодирование состояния энкодера -----------------------------------
+	uint8_t E = R & 3; // первые два бита это энкодер
+ 19e:	83 70       	andi	r24, 0x03	; 3
+	uint8_t D = 0; // 0-error, 1-СCW, 2-CW
+	//алгоритм кодировки: CW=10-11-01-00, CCW=01-11-10-00
+	if (S == 2 && E == 3) D=2; //10-11
+ 1a0:	90 91 62 00 	lds	r25, 0x0062	; 0x800062 <__data_end>
+ 1a4:	92 30       	cpi	r25, 0x02	; 2
+ 1a6:	29 f4       	brne	.+10     	; 0x1b2 <__vector_2+0x74>
+ 1a8:	83 30       	cpi	r24, 0x03	; 3
+ 1aa:	09 f0       	breq	.+2      	; 0x1ae <__vector_2+0x70>
+ 1ac:	71 c0       	rjmp	.+226    	; 0x290 <__vector_2+0x152>
+ 1ae:	22 e0       	ldi	r18, 0x02	; 2
+ 1b0:	12 c0       	rjmp	.+36     	; 0x1d6 <__vector_2+0x98>
+	if (S == 3 && E == 1) D=2; //11-01
+ 1b2:	93 30       	cpi	r25, 0x03	; 3
+ 1b4:	29 f4       	brne	.+10     	; 0x1c0 <__vector_2+0x82>
+ 1b6:	81 30       	cpi	r24, 0x01	; 1
+ 1b8:	09 f4       	brne	.+2      	; 0x1bc <__vector_2+0x7e>
+ 1ba:	7c c0       	rjmp	.+248    	; 0x2b4 <__vector_2+0x176>
+	// --- проверим не выключено ли устройство --------------------------------
+	if (!DeviceIsON) return; // устройство выключено
+	
+	// --- декодирование состояния энкодера -----------------------------------
+	uint8_t E = R & 3; // первые два бита это энкодер
+	uint8_t D = 0; // 0-error, 1-СCW, 2-CW
+ 1bc:	20 e0       	ldi	r18, 0x00	; 0
+ 1be:	0b c0       	rjmp	.+22     	; 0x1d6 <__vector_2+0x98>
+	//алгоритм кодировки: CW=10-11-01-00, CCW=01-11-10-00
+	if (S == 2 && E == 3) D=2; //10-11
+	if (S == 3 && E == 1) D=2; //11-01
+	if (S == 1 && E == 0) D=2; //01-00
+ 1c0:	91 30       	cpi	r25, 0x01	; 1
+ 1c2:	09 f0       	breq	.+2      	; 0x1c6 <__vector_2+0x88>
+ 1c4:	6d c0       	rjmp	.+218    	; 0x2a0 <__vector_2+0x162>
+ 1c6:	81 11       	cpse	r24, r1
+ 1c8:	65 c0       	rjmp	.+202    	; 0x294 <__vector_2+0x156>
+ 1ca:	22 e0       	ldi	r18, 0x02	; 2
+ 1cc:	64 c0       	rjmp	.+200    	; 0x296 <__vector_2+0x158>
+	if (S == 0 && E == 2) D=2; //00-10
+ 1ce:	82 30       	cpi	r24, 0x02	; 2
+ 1d0:	09 f0       	breq	.+2      	; 0x1d4 <__vector_2+0x96>
+ 1d2:	6b c0       	rjmp	.+214    	; 0x2aa <__vector_2+0x16c>
+ 1d4:	22 e0       	ldi	r18, 0x02	; 2
+	
+	if (S == 1 && E == 3) D=1; //01-11
+	if (S == 3 && E == 2) D=1; //11-10
+ 1d6:	93 30       	cpi	r25, 0x03	; 3
+ 1d8:	21 f4       	brne	.+8      	; 0x1e2 <__vector_2+0xa4>
+ 1da:	82 30       	cpi	r24, 0x02	; 2
+ 1dc:	61 f4       	brne	.+24     	; 0x1f6 <__vector_2+0xb8>
+ 1de:	21 e0       	ldi	r18, 0x01	; 1
+ 1e0:	0a c0       	rjmp	.+20     	; 0x1f6 <__vector_2+0xb8>
+	if (S == 2 && E == 0) D=1; //10-00
+ 1e2:	92 30       	cpi	r25, 0x02	; 2
+ 1e4:	19 f4       	brne	.+6      	; 0x1ec <__vector_2+0xae>
+ 1e6:	88 23       	and	r24, r24
+ 1e8:	51 f0       	breq	.+20     	; 0x1fe <__vector_2+0xc0>
+ 1ea:	05 c0       	rjmp	.+10     	; 0x1f6 <__vector_2+0xb8>
+	if (S == 0 && E == 1) D=1; //00-01	
+ 1ec:	91 11       	cpse	r25, r1
+ 1ee:	03 c0       	rjmp	.+6      	; 0x1f6 <__vector_2+0xb8>
+ 1f0:	81 30       	cpi	r24, 0x01	; 1
+ 1f2:	09 f4       	brne	.+2      	; 0x1f6 <__vector_2+0xb8>
+ 1f4:	5c c0       	rjmp	.+184    	; 0x2ae <__vector_2+0x170>
+	
+	if (D != 0) S = E;
+ 1f6:	22 23       	and	r18, r18
+ 1f8:	09 f4       	brne	.+2      	; 0x1fc <__vector_2+0xbe>
+ 1fa:	5e c0       	rjmp	.+188    	; 0x2b8 <__vector_2+0x17a>
+ 1fc:	01 c0       	rjmp	.+2      	; 0x200 <__vector_2+0xc2>
+	if (S == 1 && E == 0) D=2; //01-00
+	if (S == 0 && E == 2) D=2; //00-10
+	
+	if (S == 1 && E == 3) D=1; //01-11
+	if (S == 3 && E == 2) D=1; //11-10
+	if (S == 2 && E == 0) D=1; //10-00
+ 1fe:	21 e0       	ldi	r18, 0x01	; 1
+	if (S == 0 && E == 1) D=1; //00-01	
+	
+	if (D != 0) S = E;
+ 200:	80 93 62 00 	sts	0x0062, r24	; 0x800062 <__data_end>
+
+	switch (D)
+ 204:	21 30       	cpi	r18, 0x01	; 1
+ 206:	19 f0       	breq	.+6      	; 0x20e <__vector_2+0xd0>
+ 208:	22 30       	cpi	r18, 0x02	; 2
+ 20a:	f1 f0       	breq	.+60     	; 0x248 <__vector_2+0x10a>
+ 20c:	55 c0       	rjmp	.+170    	; 0x2b8 <__vector_2+0x17a>
+	{
+		case 1: //CW - увеличение яркости
+			if (brightness >= step) brightness-=step;
+ 20e:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <brightness>
+ 212:	90 91 69 00 	lds	r25, 0x0069	; 0x800069 <brightness+0x1>
+ 216:	82 30       	cpi	r24, 0x02	; 2
+ 218:	91 05       	cpc	r25, r1
+ 21a:	3c f0       	brlt	.+14     	; 0x22a <__vector_2+0xec>
+ 21c:	02 97       	sbiw	r24, 0x02	; 2
+ 21e:	90 93 69 00 	sts	0x0069, r25	; 0x800069 <brightness+0x1>
+ 222:	80 93 68 00 	sts	0x0068, r24	; 0x800068 <brightness>
+			if (brightness < step) brightness = 0;
+ 226:	02 97       	sbiw	r24, 0x02	; 2
+ 228:	24 f4       	brge	.+8      	; 0x232 <__vector_2+0xf4>
+ 22a:	10 92 69 00 	sts	0x0069, r1	; 0x800069 <brightness+0x1>
+ 22e:	10 92 68 00 	sts	0x0068, r1	; 0x800068 <brightness>
+			OCR0A = OCR0B = pgm_read_word_near(br + brightness);
+ 232:	e0 91 68 00 	lds	r30, 0x0068	; 0x800068 <brightness>
+ 236:	f0 91 69 00 	lds	r31, 0x0069	; 0x800069 <brightness+0x1>
+ 23a:	ee 5d       	subi	r30, 0xDE	; 222
+ 23c:	ff 4f       	sbci	r31, 0xFF	; 255
+ 23e:	85 91       	lpm	r24, Z+
+ 240:	94 91       	lpm	r25, Z
+ 242:	8c bf       	out	0x3c, r24	; 60
+ 244:	86 bf       	out	0x36, r24	; 54
+			break;
+ 246:	38 c0       	rjmp	.+112    	; 0x2b8 <__vector_2+0x17a>
+		case 2: //CCW - уменьшение яркости
+			if (brightness <= (max-step)) brightness+=step;
+ 248:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <brightness>
+ 24c:	90 91 69 00 	lds	r25, 0x0069	; 0x800069 <brightness+0x1>
+ 250:	81 39       	cpi	r24, 0x91	; 145
+ 252:	91 05       	cpc	r25, r1
+ 254:	2c f4       	brge	.+10     	; 0x260 <__vector_2+0x122>
+ 256:	02 96       	adiw	r24, 0x02	; 2
+ 258:	90 93 69 00 	sts	0x0069, r25	; 0x800069 <brightness+0x1>
+ 25c:	80 93 68 00 	sts	0x0068, r24	; 0x800068 <brightness>
+			if (brightness >= (max-step)) brightness = max;
+ 260:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <brightness>
+ 264:	90 91 69 00 	lds	r25, 0x0069	; 0x800069 <brightness+0x1>
+ 268:	80 39       	cpi	r24, 0x90	; 144
+ 26a:	91 05       	cpc	r25, r1
+ 26c:	34 f0       	brlt	.+12     	; 0x27a <__vector_2+0x13c>
+ 26e:	82 e9       	ldi	r24, 0x92	; 146
+ 270:	90 e0       	ldi	r25, 0x00	; 0
+ 272:	90 93 69 00 	sts	0x0069, r25	; 0x800069 <brightness+0x1>
+ 276:	80 93 68 00 	sts	0x0068, r24	; 0x800068 <brightness>
+			OCR0A = OCR0B = pgm_read_word_near(br + brightness);
+ 27a:	e0 91 68 00 	lds	r30, 0x0068	; 0x800068 <brightness>
+ 27e:	f0 91 69 00 	lds	r31, 0x0069	; 0x800069 <brightness+0x1>
+ 282:	ee 5d       	subi	r30, 0xDE	; 222
+ 284:	ff 4f       	sbci	r31, 0xFF	; 255
+ 286:	85 91       	lpm	r24, Z+
+ 288:	94 91       	lpm	r25, Z
+ 28a:	8c bf       	out	0x3c, r24	; 60
+ 28c:	86 bf       	out	0x36, r24	; 54
+			break;
+ 28e:	14 c0       	rjmp	.+40     	; 0x2b8 <__vector_2+0x17a>
+	// --- проверим не выключено ли устройство --------------------------------
+	if (!DeviceIsON) return; // устройство выключено
+	
+	// --- декодирование состояния энкодера -----------------------------------
+	uint8_t E = R & 3; // первые два бита это энкодер
+	uint8_t D = 0; // 0-error, 1-СCW, 2-CW
+ 290:	20 e0       	ldi	r18, 0x00	; 0
+ 292:	a1 cf       	rjmp	.-190    	; 0x1d6 <__vector_2+0x98>
+ 294:	20 e0       	ldi	r18, 0x00	; 0
+	if (S == 2 && E == 3) D=2; //10-11
+	if (S == 3 && E == 1) D=2; //11-01
+	if (S == 1 && E == 0) D=2; //01-00
+	if (S == 0 && E == 2) D=2; //00-10
+	
+	if (S == 1 && E == 3) D=1; //01-11
+ 296:	83 30       	cpi	r24, 0x03	; 3
+ 298:	09 f0       	breq	.+2      	; 0x29c <__vector_2+0x15e>
+ 29a:	a8 cf       	rjmp	.-176    	; 0x1ec <__vector_2+0xae>
+ 29c:	21 e0       	ldi	r18, 0x01	; 1
+ 29e:	a6 cf       	rjmp	.-180    	; 0x1ec <__vector_2+0xae>
+	uint8_t D = 0; // 0-error, 1-СCW, 2-CW
+	//алгоритм кодировки: CW=10-11-01-00, CCW=01-11-10-00
+	if (S == 2 && E == 3) D=2; //10-11
+	if (S == 3 && E == 1) D=2; //11-01
+	if (S == 1 && E == 0) D=2; //01-00
+	if (S == 0 && E == 2) D=2; //00-10
+ 2a0:	99 23       	and	r25, r25
+ 2a2:	09 f4       	brne	.+2      	; 0x2a6 <__vector_2+0x168>
+ 2a4:	94 cf       	rjmp	.-216    	; 0x1ce <__vector_2+0x90>
+	// --- проверим не выключено ли устройство --------------------------------
+	if (!DeviceIsON) return; // устройство выключено
+	
+	// --- декодирование состояния энкодера -----------------------------------
+	uint8_t E = R & 3; // первые два бита это энкодер
+	uint8_t D = 0; // 0-error, 1-СCW, 2-CW
+ 2a6:	20 e0       	ldi	r18, 0x00	; 0
+ 2a8:	96 cf       	rjmp	.-212    	; 0x1d6 <__vector_2+0x98>
+ 2aa:	20 e0       	ldi	r18, 0x00	; 0
+ 2ac:	94 cf       	rjmp	.-216    	; 0x1d6 <__vector_2+0x98>
+	if (S == 1 && E == 3) D=1; //01-11
+	if (S == 3 && E == 2) D=1; //11-10
+	if (S == 2 && E == 0) D=1; //10-00
+	if (S == 0 && E == 1) D=1; //00-01	
+	
+	if (D != 0) S = E;
+ 2ae:	80 93 62 00 	sts	0x0062, r24	; 0x800062 <__data_end>
+ 2b2:	ad cf       	rjmp	.-166    	; 0x20e <__vector_2+0xd0>
+	// --- декодирование состояния энкодера -----------------------------------
+	uint8_t E = R & 3; // первые два бита это энкодер
+	uint8_t D = 0; // 0-error, 1-СCW, 2-CW
+	//алгоритм кодировки: CW=10-11-01-00, CCW=01-11-10-00
+	if (S == 2 && E == 3) D=2; //10-11
+	if (S == 3 && E == 1) D=2; //11-01
+ 2b4:	22 e0       	ldi	r18, 0x02	; 2
+ 2b6:	8f cf       	rjmp	.-226    	; 0x1d6 <__vector_2+0x98>
+			OCR0A = OCR0B = pgm_read_word_near(br + brightness);
+			break;
+		case 0: //ошибка не обрабатывается
+			break;
+	}	
+}
+ 2b8:	ff 91       	pop	r31
+ 2ba:	ef 91       	pop	r30
+ 2bc:	9f 91       	pop	r25
+ 2be:	8f 91       	pop	r24
+ 2c0:	3f 91       	pop	r19
+ 2c2:	2f 91       	pop	r18
+ 2c4:	0f 90       	pop	r0
+ 2c6:	0f be       	out	0x3f, r0	; 63
+ 2c8:	0f 90       	pop	r0
+ 2ca:	1f 90       	pop	r1
+ 2cc:	18 95       	reti
+
+000002ce <__vector_3>:
+
+
+// прерывания с линий PCINT8..11
+ISR (PCINT1_vect)
+{
+ 2ce:	1f 92       	push	r1
+ 2d0:	0f 92       	push	r0
+ 2d2:	0f b6       	in	r0, 0x3f	; 63
+ 2d4:	0f 92       	push	r0
+ 2d6:	11 24       	eor	r1, r1
+ 2d8:	8f 93       	push	r24
+ 2da:	9f 93       	push	r25
+	// --- проверим не выключено ли устройство --------------------------------
+	if (!DeviceIsON) return; // устройство выключено
+ 2dc:	80 91 67 00 	lds	r24, 0x0067	; 0x800067 <DeviceIsON>
+ 2e0:	88 23       	and	r24, r24
+ 2e2:	d9 f1       	breq	.+118    	; 0x35a <__vector_3+0x8c>
+	
+	// --- проверим нажатие кнопки смены цветовой гаммы -----------------------
+	uint8_t BtnState = PINB & P0;
+ 2e4:	86 b3       	in	r24, 0x16	; 22
+ 2e6:	81 70       	andi	r24, 0x01	; 1
+	if ((BtnState ^ KEY_MODE_lastState) == P0)
+ 2e8:	90 91 63 00 	lds	r25, 0x0063	; 0x800063 <KEY_MODE_lastState>
+ 2ec:	98 27       	eor	r25, r24
+ 2ee:	91 30       	cpi	r25, 0x01	; 1
+ 2f0:	a1 f5       	brne	.+104    	; 0x35a <__vector_3+0x8c>
+	{
+		// состояние изменилось на противоположное
+		if (BtnState == P0) // кнопка отжата
+ 2f2:	81 30       	cpi	r24, 0x01	; 1
+ 2f4:	81 f5       	brne	.+96     	; 0x356 <__vector_3+0x88>
+		{
+			mode++;
+ 2f6:	90 91 65 00 	lds	r25, 0x0065	; 0x800065 <mode>
+ 2fa:	9f 5f       	subi	r25, 0xFF	; 255
+ 2fc:	90 93 65 00 	sts	0x0065, r25	; 0x800065 <mode>
+			if (mode > 2) mode = 0;
+ 300:	93 30       	cpi	r25, 0x03	; 3
+ 302:	18 f0       	brcs	.+6      	; 0x30a <__vector_3+0x3c>
+ 304:	10 92 65 00 	sts	0x0065, r1	; 0x800065 <mode>
+ 308:	06 c0       	rjmp	.+12     	; 0x316 <__vector_3+0x48>
+			switch (mode)
+ 30a:	91 30       	cpi	r25, 0x01	; 1
+ 30c:	51 f0       	breq	.+20     	; 0x322 <__vector_3+0x54>
+ 30e:	18 f0       	brcs	.+6      	; 0x316 <__vector_3+0x48>
+ 310:	92 30       	cpi	r25, 0x02	; 2
+ 312:	69 f0       	breq	.+26     	; 0x32e <__vector_3+0x60>
+ 314:	12 c0       	rjmp	.+36     	; 0x33a <__vector_3+0x6c>
+			{
+				case 0:
+					LEDY = LEDW = TRUE;
+ 316:	91 e0       	ldi	r25, 0x01	; 1
+ 318:	90 93 66 00 	sts	0x0066, r25	; 0x800066 <LEDW>
+ 31c:	90 93 64 00 	sts	0x0064, r25	; 0x800064 <LEDY>
+					break;
+ 320:	12 c0       	rjmp	.+36     	; 0x346 <__vector_3+0x78>
+				case 1:
+					LEDY = FALSE;
+ 322:	10 92 64 00 	sts	0x0064, r1	; 0x800064 <LEDY>
+					LEDW = TRUE;
+ 326:	91 e0       	ldi	r25, 0x01	; 1
+ 328:	90 93 66 00 	sts	0x0066, r25	; 0x800066 <LEDW>
+					break;
+ 32c:	0c c0       	rjmp	.+24     	; 0x346 <__vector_3+0x78>
+				case 2:
+					LEDY = TRUE;
+ 32e:	91 e0       	ldi	r25, 0x01	; 1
+ 330:	90 93 64 00 	sts	0x0064, r25	; 0x800064 <LEDY>
+					LEDW = FALSE;
+ 334:	10 92 66 00 	sts	0x0066, r1	; 0x800066 <LEDW>
+ 338:	04 c0       	rjmp	.+8      	; 0x342 <__vector_3+0x74>
+					break;
+				default:
+					break;
+			}
+			
+			if (!LEDW)
+ 33a:	90 91 66 00 	lds	r25, 0x0066	; 0x800066 <LEDW>
+ 33e:	91 11       	cpse	r25, r1
+ 340:	02 c0       	rjmp	.+4      	; 0x346 <__vector_3+0x78>
+				CLEAR_BIT(DDRB, DD2); // отключить PWM управление белыми LED (нулевая яркость)
+ 342:	ba 98       	cbi	0x17, 2	; 23
+ 344:	01 c0       	rjmp	.+2      	; 0x348 <__vector_3+0x7a>
+			else
+				SET_BIT(DDRB, DD2); // включить PWM управление белыми LED
+ 346:	ba 9a       	sbi	0x17, 2	; 23
+			
+			if (!LEDY)
+ 348:	90 91 64 00 	lds	r25, 0x0064	; 0x800064 <LEDY>
+ 34c:	91 11       	cpse	r25, r1
+ 34e:	02 c0       	rjmp	.+4      	; 0x354 <__vector_3+0x86>
+				CLEAR_BIT(DDRA, DD7); // отключить PWM управление желтыми LED (нулевая яркость)
+ 350:	d7 98       	cbi	0x1a, 7	; 26
+ 352:	01 c0       	rjmp	.+2      	; 0x356 <__vector_3+0x88>
+			else
+				SET_BIT(DDRA, DD7); // включить PWM управление желтыми LED
+ 354:	d7 9a       	sbi	0x1a, 7	; 26
+		}
+		
+		KEY_MODE_lastState = BtnState;
+ 356:	80 93 63 00 	sts	0x0063, r24	; 0x800063 <KEY_MODE_lastState>
+	}
+ 35a:	9f 91       	pop	r25
+ 35c:	8f 91       	pop	r24
+ 35e:	0f 90       	pop	r0
+ 360:	0f be       	out	0x3f, r0	; 63
+ 362:	0f 90       	pop	r0
+ 364:	1f 90       	pop	r1
+ 366:	18 95       	reti
+
+00000368 <_exit>:
+ 368:	f8 94       	cli
+
+0000036a <__stop_program>:
+ 36a:	ff cf       	rjmp	.-2      	; 0x36a <__stop_program>

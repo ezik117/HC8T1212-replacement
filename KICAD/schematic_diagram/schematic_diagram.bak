@@ -1,0 +1,82 @@
+EESchema Schematic File Version 4
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Microchip_ATtiny:ATtiny24A-SSU U1
+U 1 1 60281C82
+P 4350 3300
+F 0 "U1" H 4100 4150 50  0000 R CNN
+F 1 "ATtiny24A-SSU" H 4450 3250 50  0000 R CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 4350 3300 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/doc8183.pdf" H 4350 3300 50  0001 C CNN
+	1    4350 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J?
+U 1 1 60281E90
+P 5550 3800
+F 0 "J?" H 5630 3842 50  0001 L CNN
+F 1 "LEDW (white)" H 5629 3796 50  0000 L CNN
+F 2 "" H 5550 3800 50  0001 C CNN
+F 3 "~" H 5550 3800 50  0001 C CNN
+	1    5550 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J?
+U 1 1 60281F46
+P 5550 3400
+F 0 "J?" H 5630 3442 50  0001 L CNN
+F 1 "LEDY (yellow)" H 5629 3396 50  0000 L CNN
+F 2 "" H 5550 3400 50  0001 C CNN
+F 3 "~" H 5550 3400 50  0001 C CNN
+	1    5550 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J?
+U 1 1 60281F66
+P 5550 2700
+F 0 "J?" H 5630 2742 50  0001 L CNN
+F 1 "ENC-A (encoder A)" H 5630 2696 50  0000 L CNN
+F 2 "" H 5550 2700 50  0001 C CNN
+F 3 "~" H 5550 2700 50  0001 C CNN
+	1    5550 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J?
+U 1 1 60281F86
+P 5550 2800
+F 0 "J?" H 5630 2842 50  0001 L CNN
+F 1 "ENC-B (encoder B)" H 5629 2796 50  0000 L CNN
+F 2 "" H 5550 2800 50  0001 C CNN
+F 3 "~" H 5550 2800 50  0001 C CNN
+	1    5550 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J?
+U 1 1 60281FA6
+P 5550 2900
+F 0 "J?" H 5630 2942 50  0001 L CNN
+F 1 "ON/OFF KEY" H 5630 2896 50  0000 L CNN
+F 2 "" H 5550 2900 50  0001 C CNN
+F 3 "~" H 5550 2900 50  0001 C CNN
+	1    5550 2900
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
